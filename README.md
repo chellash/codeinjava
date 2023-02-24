@@ -156,5 +156,7 @@ By running PMD on this code, you can detect these issues and take steps to fix t
 And here are some explanations of the bugs that are triggered in this code:
 
 NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE: This bug is triggered when a null value is returned from a method, and the code does not check for null before accessing a method or field on the returned value. In this case, the list variable contains a null value, which will cause a NullPointerException to be thrown when the loop tries to access the toUpperCase() method on the null value.
+
 NP_NULL_PARAM_DEREF_ALL_TARGETS_DANGEROUS: This bug is triggered when a null value is passed as a parameter to a method, and the method dereferences the parameter without first checking for null. In this case, the loop is iterating over the list variable, which contains a null value, and passing that null value to the toUpperCase() method, which will cause a NullPointerException to be thrown.
+
 DM_NUMBER_CTOR: This bug is triggered when the constructor of the java.lang.Integer or java.lang.Long class is called with a value that can be represented as a constant expression. In this case, the i variable is initialized with the value 10, which is a constant expression that could be replaced with Integer.valueOf(10) for better performance.
