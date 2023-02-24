@@ -1,31 +1,21 @@
-public class Calculator {
-
-    private MathUtils mathUtils;
-
-    public Calculator() {
-        mathUtils = new MathUtils();
-    }
-
-    public void setMathUtils(MathUtils mathUtils) {
-        this.mathUtils = mathUtils;
-    }
-
-    public int add(int x, int y) {
-        return x + y;
-    }
-
-    public int subtract(int x, int y) {
-        return x - y;
-    }
-
-    public int multiply(int x, int y) {
-        return x * y;
-    }
+public class MathUtils {
 
     public int divide(int x, int y) {
-        if (y == 0) {
-            throw new IllegalArgumentException("Cannot divide by zero");
-        }
-        return mathUtils.divide(x, y);
+        return x / y;
     }
+
+    public int factorial(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Cannot compute factorial of negative number");
+        }
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        int result = 1;
+        for (int i = 2; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
 }
