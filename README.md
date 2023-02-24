@@ -128,6 +128,7 @@ Refactoring refers to the process of improving the structure and organization of
 These are just a few of the many refactoring features that developers use to improve code quality. By using refactoring techniques, developers can make their code more modular, maintainable, and flexible.
 
 <h2>Calculator Test</h2>
+
 This code demonstrates the following concepts:
 
 <b>JUnit fixtures</b> The @Before annotation is used to create an instance of Calculator before each test method is run. This ensures that the test methods are executed in isolation and don't interfere with each other.
