@@ -48,15 +48,21 @@ To use jvisualvm to monitor the memory usage of our Java application, follow the
 Compile the code and run the program in a console or terminal window.
 Open jvisualvm from the command line by typing jvisualvm and pressing Enter.
 In jvisualvm, locate the running Java process for your application under the "Local" tab.
+
 Double-click on the process to open the monitoring tab for that process.
 Select the "Memory" tab to view memory usage metrics for the Java process.
 Use the various graphs and metrics displayed on the "Memory" tab to analyze the memory usage of your Java application.
+
 Some of the memory usage metrics that you might want to pay attention to include:
 
 <b>Heap memory usage</b> This is the amount of memory being used by the Java heap, which stores objects and data used by the application.
+
 <b>Non-heap memory usage</b> This is the amount of memory being used by non-heap memory areas, such as the Java stack or native memory.
+
 <b>Total memory usage</b> This is the total amount of memory being used by the Java process, including both heap and non-heap memory.
+
 <b>Garbage collection activity</b> This metric shows how often garbage collection is occurring, which can impact the performance of your Java application.
+
 By using jvisualvm to monitor the memory usage of your Java applications, you can identify potential memory leaks or other performance issues that may be impacting the performance of your application.
 
 Let's go through each feature one by one:
@@ -121,11 +127,11 @@ Refactoring refers to the process of improving the structure and organization of
 
 These are just a few of the many refactoring features that developers use to improve code quality. By using refactoring techniques, developers can make their code more modular, maintainable, and flexible.
 
-<h2>Calculator Test</b>
+<h2>Calculator Test</h2>
 This code demonstrates the following concepts:
 
-<b>JUnit fixtures/b> The @Before annotation is used to create an instance of Calculator before each test method is run. This ensures that the test methods are executed in isolation and don't interfere with each other.
+<b>JUnit fixtures</b> The @Before annotation is used to create an instance of Calculator before each test method is run. This ensures that the test methods are executed in isolation and don't interfere with each other.
 
-<b>Test data/b> The INPUT1, INPUT2, EXPECTED_SUM, and EXPECTED_DIFFERENCE constants define the inputs and expected outputs for the testAdd and testSubtract methods.
+<b>Test data</b> The INPUT1, INPUT2, EXPECTED_SUM, and EXPECTED_DIFFERENCE constants define the inputs and expected outputs for the testAdd and testSubtract methods.
 
 <b>Mocking</b> The @Mock annotation is used to create a mock instance of DataService. The when method is used to set up the mock to return test data when its getData method is called. The calculator instance is then injected with the mock using its setDataService method. Finally, the assertEquals method is used to verify that the calculateAverage method of calculator returns the expected value of 10.0. This isolates the unit under test (Calculator) from its dependencies (DataService) and ensures that it behaves as expected.
