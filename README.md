@@ -136,3 +136,25 @@ This code demonstrates the following concepts:
 <b>Test data</b> The INPUT1, INPUT2, EXPECTED_SUM, and EXPECTED_DIFFERENCE constants define the inputs and expected outputs for the testAdd and testSubtract methods.
 
 <b>Mocking</b> The @Mock annotation is used to create a mock instance of DataService. The when method is used to set up the mock to return test data when its getData method is called. The calculator instance is then injected with the mock using its setDataService method. Finally, the assertEquals method is used to verify that the calculateAverage method of calculator returns the expected value of 10.0. This isolates the unit under test (Calculator) from its dependencies (DataService) and ensures that it behaves as expected.
+
+<h2>Code Analysis Demo</h2>
+
+In this example, we have intentionally included some issues that PMD can detect:
+
+<b>Unused variables</b> Both count and str are declared but never used, which PMD can detect.
+
+<b>Complex condition</b> The if statement has a complex condition with multiple operators, which can be hard to read and maintain.
+
+<b>Inefficient use of array</b> The for loop uses the length of the array to iterate, which can be inefficient compared to using an enhanced for loop.
+
+<b>SQL injection vulnerability</b> The input variable is not validated before being used in a SQL query, which can allow attackers to execute arbitrary SQL commands.
+
+<b>Use of deprecated methods</b> The Date constructor used in the bar() method is deprecated, which can lead to compatibility issues and reduced functionality.
+
+By running PMD on this code, you can detect these issues and take steps to fix them, improving the quality and security of your code.
+
+And here are some explanations of the bugs that are triggered in this code:
+
+NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE: This bug is triggered when a null value is returned from a method, and the code does not check for null before accessing a method or field on the returned value. In this case, the list variable contains a null value, which will cause a NullPointerException to be thrown when the loop tries to access the toUpperCase() method on the null value.
+NP_NULL_PARAM_DEREF_ALL_TARGETS_DANGEROUS: This bug is triggered when a null value is passed as a parameter to a method, and the method dereferences the parameter without first checking for null. In this case, the loop is iterating over the list variable, which contains a null value, and passing that null value to the toUpperCase() method, which will cause a NullPointerException to be thrown.
+DM_NUMBER_CTOR: This bug is triggered when the constructor of the java.lang.Integer or java.lang.Long class is called with a value that can be represented as a constant expression. In this case, the i variable is initialized with the value 10, which is a constant expression that could be replaced with Integer.valueOf(10) for better performance.
